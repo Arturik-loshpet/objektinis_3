@@ -1,0 +1,123 @@
+\chapter{README }
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{README@{README}}
+Kaip naudotis programa:\+
+
+
+\begin{DoxyEnumerate}
+\item make clean -\/ išvalyti kompiliacijos failus.
+\item make -\/ komanda sukuria failą "{}programa"{} pagal makefile.
+\item ./\+programa -\/ komanda paleidžia pačią programą.
+\end{DoxyEnumerate}
+
+Papildoma:\+ Norint atlikti programos testavimą konsolėje reikia įrašyti komandą -\/ make test.\hypertarget{md__r_e_a_d_m_e_autotoc_md0}{}\doxysubsection{\texorpdfstring{V0.\+4 testavimai}{V0.\+4 testavimai}}\label{md__r_e_a_d_m_e_autotoc_md0}
+4 versijoj duomenų įvedimo sistemoj buvo pridėta nauja failų generavimo funkcija, kuri kuria failus pagal šablonus naudotis 2 versijoj. Buvo atlikti testavimai laiko apskaičiavimui ir jų rezultatai bus pateikti žemiau:\+ 1 testavimas:\+    Duoti testavimai turi skirtingus studentų pažymių kiekius, kad matytusi skirtumas tarp atlikimo laikų.
+
+2 testavimas (visi testai buvo atlikti su pažymių sk. = 2 ir rušiuoti pagal medianą):\+   
+
+\DoxyHorRuler{0}
+
+
+V1.\+0 testavimai Sistema:\+ CPU -\/ Apple M2 (8 branduoliai) RAM -\/ 16gb SSD -\/ 256gb
+
+\DoxyHorRuler{0}
+ 1 strategija -\/ Duomenys nuskaitomi į vieną duomenų konteinerį ir skirstymo metu masyvas skirstomas į maladiec ir lopų konteinerius. Rezultatai:\+   
+
+\DoxyHorRuler{0}
+ 2 strategija -\/ Duomenys nuskaitomi į "{}maladiec"{} konteinerį ir žmones su mažesniu vidurkiu yra įdedami i lopai konteineri ir iškerpami. Rezultatai:\+
+
+  
+
+\DoxyHorRuler{0}
+ 3 strategija -\/ Padaryta pagal 2 strategija, tik vietoj erase yra naudojamas partition algoritmas. Rezultatai:\+
+
+  
+
+\DoxyHorRuler{0}
+
+
+V1.\+1 TESTAVIMAI \hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysubsection{\texorpdfstring{Padaryti pokyčiai -\/ Struct pakeistas į Class.}{Padaryti pokyčiai -\/ Struct pakeistas į Class.}}\label{md__r_e_a_d_m_e_autotoc_md6}
+Greičio patikrinimas po pokyčių:\+  Aiškių skirtumų tarp atlikimo laiko nėra.
+
+\DoxyHorRuler{0}
+ Optimizacijos Flagai. Testavimui buvo naudojami optimizacijos flagai -\/O1, -\/O2, -\/O3 ir testavimai buvo atlikti su tais pačiais failais.
+
+-\/O1:\+ 
+
+"{}\+Programa"{} paleidimo failo dydis naudojant pirmą flagą -\/ 330Kb.
+
+\DoxyHorRuler{0}
+ -\/O2:\+ 
+
+"{}\+Programa"{} paleidimo failo dydis naudojant pirmą flagą -\/ 314Kb.
+
+\DoxyHorRuler{0}
+
+
+-\/O3:\+ 
+
+"{}\+Programa"{} paleidimo failo dydis naudojant pirmą flagą -\/ 329Kb.
+
+\DoxyHorRuler{0}
+ Išvados:\+ Matosi aiškus skirtumas tarp programų atlikimo laiko kur nebuvo naudojami optimizacijos flagai ir kur buvo, kadangi skirtumas atlikimo laike vos ne dvigubai skiriasi, bet atlikimo greičio skirtumas tarp pačių flagų nėra aiškiai pastebimas.
+
+\DoxyHorRuler{0}
+ V1.\+2 TESTAVIMAI Padaryti pokyčiai -\/ įgyvendinta "{}\+Rule of five"{} ir įvesties/\+išvesties operatoriai. Taip pat pridėtas testavimo metodas, kuris patikrina, kad visi metodai veikia.
+
+Apie išvesties ir išvesties metodus:\+
+\begin{DoxyEnumerate}
+\item perator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} nuskaito vardą, pavardę, egzamino pažymį, pažymių kiekį ir pačius pažymius
+\item operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} išveda studento duomenis tuo pačiu formatu į failą arba į konsolę pagal vartotojo pasirinkimą.
+\item šie operatoriai buvo testuojami \doxylink{rule__of__five__test_8cpp_source}{rule\+\_\+of\+\_\+five\+\_\+test.\+cpp}
+\end{DoxyEnumerate}
+
+Kaip veikia testavimas:\+ Testavimo kodas yra paleidžiamas konsolėje įvedus ./\+rule\+\_\+of\+\_\+five\+\_\+test. Jis naudojamas visų naujų metodų patikrai. Kodui praėjus testavimą į konsole yra išvedama eilutė "{}\+Visi rule of five ir operatoriu testai praejo."{}, jeigu programa yra terminuojama, reiškias program nepraėjo testavimų.
+
+\DoxyHorRuler{0}
+ V1.\+5 TESTAVIMAI
+
+Padaryti pokyčiai -\/ sukurta abstrakti klasė "{}\+Zmogus"{}, kurios išvestinė yra programos pagrindinė naudojama klasė "{}\+Studentas"{}. Šioje klasėje yra saugomi tokie parametrai kaip vardas ir pavardė, kuriuos paveldi klasė "{}\+Studentas"{}. "{}\+Zmogus"{} klasės objektus sukurti nėra įmanoma, kadangi čia yra abstrakti klasė, o jos išvestinių klasių, kaip "{}\+Studentas"{}, objektų kūrimas yra įmanomas.
+
+Ši nauja versija palaiko visas prieš tai realizuotas funkcijas.
+
+V2.\+0 UNIT TESTAI Realizuoti paprasti unit testai faile \doxylink{rule__of__five__test_8cpp_source}{rule\+\_\+of\+\_\+five\+\_\+test.\+cpp}. Testuose naudojama pagalbinė check funkcija, kuri patikrina sąlygą ir išveda klaidos pranešimą.
+
+Testai paleidžiami komanda:\+ \begin{DoxyVerb}make test
+\end{DoxyVerb}
+
+
+Pateikti testai tikrina:\+ \begin{DoxyVerb}5-ių metodų taisyklę: kopijavimo konstruktorių, perkėlimo konstruktorių, kopijavimo priskyrimą, perkėlimo priskyrimą ir destruktorių.
+Studentas veikimą per abstrakčią Zmogus klasės sąsają.
+Įvesties ir išvesties operatorius >> ir <<.
+Vardo bei skaičių validacijos funkcijas.
+Galutinio vidurkio ir medianos skaičiavimą.
+\end{DoxyVerb}
+
+
+\DoxyHorRuler{0}
+ V3.\+0 TESTAVIMAI
+
+1.\+0; Padaryti pokyčiai -\/ sukurtas naujas konteineris \doxylink{class_my_vector}{My\+Vector}, kuris yra naudojamas vietoj standartinio std::\+vector. Šis konteineris ir jo visos funkcijos yra aprašytos faile "{}vector.\+cpp"{}, jis įgyvendina 80\% standartinio vektoriaus funkcijų.
+
+Pačią vektoriaus klasę sudaro tik trys kintamieji. Size\+\_\+ -\/ elemtų kiekis vektoriuje Capacity\+\_\+ kiek vietos yra dedikuota vektoriui data\+\_\+ saugomi duomenys vektoriuje
+
+Sukurtų funkcijų pavyzdžiai:\+
+
+Grow():\+ Grow yra privati funkcija, kurios negalima iškviesti už pačios klasės ribų. Jos paskirtis yra didinti vektoriaus talpa automatiškai, kai rašymo metu yra pasiekiamas limitas. /\+/\+nuotrauka funkcijos grow.
+
+push\+\_\+back():\+ Push\+\_\+back funkcija yra naudojama naujam elementui įrašyti į vektoriaus galą. Prieš įrašant reikšmę yra patikrinama ar vektoriuje dar yra laisvos vietos. Jeigu size\+\_\+ yra lygus capacity\+\_\+, tada iškviečiama grow() funkcija, kuri padidina vektoriaus talpą. Po to nauja reikšmė yra įrašoma į data\+\_\+\+[size\+\_\+]\+ vietą ir size\+\_\+ padidinamas vienetu. /\+/\+nuotrauka funkcijos push\+\_\+back.
+
+pop\+\_\+back():\+ Pop\+\_\+back funkcija pašalina paskutinį vektoriaus elementą. Funkcija pirmiausia patikrina ar vektorius nėra tuščias, tai yra ar size\+\_\+ yra daugiau už 0. Jeigu vektoriuje yra elementų, size\+\_\+ yra sumažinamas vienetu. Pats elementas iš atminties nėra fiziškai ištrinamas, bet jis tampa nebenaudojamas, nes vektoriaus dydis sumažėja. /\+/\+nuotrauka funkcijos pop\+\_\+back.
+
+reserve():\+ Reserve funkcija yra naudojama iš anksto padidinti vektoriaus talpą. Ji nekeičia size\+\_\+, todėl vektoriaus elementų kiekis lieka toks pats. Jeigu vartotojo nurodytas naujas capacity yra mažesnis arba lygus dabartiniam capacity\+\_\+, funkcija nieko nedaro. Jeigu naujas capacity yra didesnis, sukuriamas naujas masyvas, į jį perkeliami seni duomenys, senas masyvas ištrinamas ir data\+\_\+ pradeda rodyti į naują masyvą. /\+/\+nuotrauka funkcijos reserve.
+
+erase():\+ Erase funkcija yra naudojama pašalinti vieną elementą arba elementų intervalą iš vektoriaus. Funkcijai perduodami iteratoriai, kurie nurodo nuo kurios vietos iki kurios vietos reikia trinti elementus. Po pašalinimo likę elementai yra perstumiami į kairę, kad vektoriuje neliktų tuščių tarpų. Galiausiai size\+\_\+ yra sumažinamas pagal pašalintų elementų kiekį. /\+/\+nuotrauka funkcijos erase. 2.\+0:\+
+
+
+
+3.\+0:\+ Atminties perskirstymas uzpildant std::\+vector naudojant studentų failą su 10000000 studentų duomenim įvyko 25 kartus, o užpildant mano sukurtą vektorių atminties perskirtymas įvyko 24 kartus.
+
+4.\+0:\+ Spartos testavimai naudojant studenų failus 1000 -\/ 10000000 dydžių su std::\+vector ir mano vektorium:\+
+
+
+
+Pagal atliktus testavimus matome, kad mano vektorius skaitymą iš failo atlieka lėčiau negu std::\+vector, bet sort ir skirstymo funkcijus yra atliekamos arba panašiu greičiu, arba greičiau už std::\+vector. 
