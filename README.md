@@ -103,6 +103,21 @@ Padaryti pokyčiai - sukurta abstrakti klasė "Zmogus", kurios išvestinė yra p
 
 Ši nauja versija palaiko visas prieš tai realizuotas funkcijas.
 
+V2.0 UNIT TESTAI Realizuoti paprasti unit testai faile rule_of_five_test.cpp. Testuose naudojama pagalbinė check funkcija, kuri patikrina sąlygą ir išveda klaidos pranešimą.
+
+Testai paleidžiami komanda:
+
+    make test
+
+Pateikti testai tikrina:
+
+    5-ių metodų taisyklę: kopijavimo konstruktorių, perkėlimo konstruktorių, kopijavimo priskyrimą, perkėlimo priskyrimą ir destruktorių.
+    Studentas veikimą per abstrakčią Zmogus klasės sąsają.
+    Įvesties ir išvesties operatorius >> ir <<.
+    Vardo bei skaičių validacijos funkcijas.
+    Galutinio vidurkio ir medianos skaičiavimą.
+
+
 ---------------------------------------------------------------------------------------------------------------------------
 V3.0 TESTAVIMAI
 
@@ -135,12 +150,20 @@ erase():
 Erase funkcija yra naudojama pašalinti vieną elementą arba elementų intervalą iš vektoriaus. Funkcijai perduodami iteratoriai, kurie nurodo nuo kurios vietos iki kurios vietos reikia trinti elementus. Po pašalinimo likę elementai yra perstumiami į kairę, kad vektoriuje neliktų tuščių tarpų. Galiausiai size_ yra sumažinamas pagal pašalintų elementų kiekį.
 //nuotrauka funkcijos erase.
 2.0:
-nuotrauka is excel
+
+<img width="653" height="113" alt="image" src="https://github.com/user-attachments/assets/4bb0bfa1-824b-4b44-8056-c366785e54bd" />
+
 3.0:
 Atminties perskirstymas uzpildant std::vector naudojant studentų failą su 10000000 studentų duomenim įvyko 25 kartus, o užpildant mano sukurtą vektorių atminties perskirtymas įvyko 24 kartus.
 
 4.0:
-Spartos testavimai
+Spartos testavimai naudojant studenų failus 1000 - 10000000 dydžių su std::vector ir mano vektorium:
+
+<img width="845" height="240" alt="image" src="https://github.com/user-attachments/assets/8fd90208-3301-469d-b95d-ffd1cd002f12" />
+
+Pagal atliktus testavimus matome, kad mano vektorius skaitymą iš failo atlieka lėčiau negu std::vector, bet sort ir skirstymo funkcijus yra atliekamos arba panašiu greičiu, arba greičiau už std::vector.
+
+
 
 
 
