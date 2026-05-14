@@ -134,11 +134,13 @@ Reserve funkcija yra naudojama iš anksto padidinti vektoriaus talpą. Ji nekei�
 erase():
 Erase funkcija yra naudojama pašalinti vieną elementą arba elementų intervalą iš vektoriaus. Funkcijai perduodami iteratoriai, kurie nurodo nuo kurios vietos iki kurios vietos reikia trinti elementus. Po pašalinimo likę elementai yra perstumiami į kairę, kad vektoriuje neliktų tuščių tarpų. Galiausiai size_ yra sumažinamas pagal pašalintų elementų kiekį.
 //nuotrauka funkcijos erase.
-2.0
+2.0:
 nuotrauka is excel
-3.0
+3.0:
 Atminties perskirstymas uzpildant std::vector naudojant studentų failą su 10000000 studentų duomenim įvyko 25 kartus, o užpildant mano sukurtą vektorių atminties perskirtymas įvyko 24 kartus.
 
+4.0:
+Spartos testavimai
 
 
 
