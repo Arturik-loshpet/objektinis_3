@@ -3,6 +3,7 @@
 
 #include "library.h"
 #include "patikrinimai.h"
+#include "vector.h"
 
 class Zmogus {
 public:
@@ -58,13 +59,12 @@ protected:
 template <typename GradeContainer>
 class Studentas : public Zmogus {
 public:
-    Studentas(const std::string& vardas, const std::string& pavarde, const GradeContainer& pazymiai,
-              int egzaminas, double vidurkis, double mediana)
-        : Zmogus(vardas, pavarde),
-          pazymiai_(pazymiai),
-          egzaminas_(egzaminas),
-          vidurkis_(vidurkis),
-          mediana_(mediana) {}
+    Studentas()
+    : Zmogus("", ""),
+      pazymiai_(),
+      egzaminas_(0),
+      vidurkis_(0.0),
+      mediana_(0.0) {}
 
     // Copy constructor.
     Studentas(const Studentas& other)
@@ -152,10 +152,12 @@ private:
 using VectorStudent = Studentas<std::vector<int>>;
 using ListStudent = Studentas<std::list<int>>;
 using DequeStudent = Studentas<std::deque<int>>;
+using MyVectorStudent = Studentas<MyVector<int>>;
 
 using VectorContainer = std::vector<VectorStudent>;
 using ListContainer = std::list<ListStudent>;
 using DequeContainer = std::deque<DequeStudent>;
+using MyVectorContainer = MyVector<MyVectorStudent>;
 
 template <typename GradeContainer>
 std::ostream& operator<<(std::ostream& out, const Studentas<GradeContainer>& studentas) {
@@ -498,6 +500,7 @@ void skaitymas(StudentContainer& stud, const std::string& input, double& laikas)
 
     std::string line;
     int pazymis = 0;
+    std::size_t capacity_hits = 0;
 
     try {
         const std::filesystem::path failo_kelias = input;
@@ -526,7 +529,7 @@ void skaitymas(StudentContainer& stud, const std::string& input, double& laikas)
                 continue;
             }
 
-            Student temp("", "", {}, 0, 0.0, 0.0);
+            Student temp;
             std::istringstream laik(line);
             std::string vardas;
             std::string pavarde;
@@ -555,7 +558,12 @@ void skaitymas(StudentContainer& stud, const std::string& input, double& laikas)
             if (temp.pazymiai().empty()) {
                 throw std::runtime_error("Truksta namu darbu pazymiu.");
             }
-
+            if constexpr (std::is_same_v<StudentContainer, VectorContainer>
+                          || std::is_same_v<StudentContainer, MyVectorContainer>) {
+                if (stud.size() == stud.capacity()) {
+                    ++capacity_hits;
+                }
+            }
             stud.push_back(temp);
         }
 
@@ -563,6 +571,10 @@ void skaitymas(StudentContainer& stud, const std::string& input, double& laikas)
         const std::chrono::duration<double, std::milli> trukme = pabaiga - pradzia;
         std::cout << "Skaitymas uztruko " << trukme.count() << " ms" << std::endl;
         laikas += trukme.count();
+        if constexpr (std::is_same_v<StudentContainer, VectorContainer>
+                      || std::is_same_v<StudentContainer, MyVectorContainer>) {
+            std::cout << "Size buvo lygu capacity " << capacity_hits << " kartu" << std::endl;
+        }
     } catch (const std::filesystem::filesystem_error& e) {
         std::cout << "Failu sistemos klaida: " << e.what() << std::endl;
     } catch (const std::exception& e) {
@@ -676,7 +688,7 @@ int run_program(const std::string& konteinerio_pavadinimas) {
     std::cout << "Naudojamas konteineris: " << konteinerio_pavadinimas << std::endl;
     std::cout << "Studentu Vardu ir pazymiu ivedimu sistema, skirta medianos bei vidurkio apskaiciavimui" << std::endl;
     while (true) {
-        Student temp("", "", {}, 0, 0.0, 0.0);
+        Student temp;
         int m = 0;
         while (true) {
             std::cout << "1 - ranka, 2 - generuoti tik pazymius, 3 - generuoti studentu vardus, pavardes ir pazymius, 4 - skaityti duomenis is failo, 5 - generuoti failus, 6 - baigti darba: ";

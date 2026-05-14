@@ -1,24 +1,4 @@
-#include <algorithm>
-#include <chrono>
-#include <cctype>
-#include <cstddef>
-#include <deque>
-#include <filesystem>
-#include <fstream>
-#include <iomanip>
-#include <iostream>
-#include <iterator>
-#include <limits>
-#include <list>
-#include <random>
-#include <sstream>
-#include <string>
-#include <type_traits>
-#include <utility>
-#include <vector>
-#include <stdexcept>
-
-
+#include "library.h"
 
 template <typename T>
 class MyVector{

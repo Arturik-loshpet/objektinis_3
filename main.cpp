@@ -6,7 +6,7 @@ int main() {
     std::string input;
 
     while (true) {
-        std::cout << "Pasirinkite konteineri: 1 - vector, 2 - list, 3 - deque: ";
+        std::cout << "Pasirinkite konteineri: 1 - vector, 2 - list, 3 - deque, 4 - mano vektorius: ";
         if (!read_input(input)) {
             return 0;
         }
@@ -20,6 +20,9 @@ int main() {
         }
         if (choice == 3) {
             return run_program<DequeContainer>("deque");
+        }
+        if (choice == 4) {
+            return run_program<MyVectorContainer>("MyVector");
         }
 
         std::cout << "Iveskite tinkama sk!" << std::endl;
