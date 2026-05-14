@@ -506,6 +506,7 @@ void skaitymas(StudentContainer& stud, const std::string& input, double& laikas)
         const std::filesystem::path failo_kelias = input;
         if (!std::filesystem::exists(failo_kelias)) {
             throw std::runtime_error("Toks failas nurodytame aplanke nerastas!");
+            return;
         }
         if (!std::filesystem::is_regular_file(failo_kelias)) {
             throw std::runtime_error("Nurodytas kelias nera failas!");

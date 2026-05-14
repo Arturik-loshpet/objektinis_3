@@ -17,6 +17,8 @@ DisableProgramGroupPage=yes
 
 [Files]
 Source: "dist\programa.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "dist\studentai10000.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "dist\studentai100000.txt"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\Vardenis-Pavardenis"; Filename: "{app}\programa.exe"; WorkingDir: "{app}"
