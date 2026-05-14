@@ -5,6 +5,7 @@
 #include <chrono>
 #include <cctype>
 #include <cstddef>
+#include <cassert>
 #include <deque>
 #include <filesystem>
 #include <fstream>
@@ -15,6 +16,7 @@
 #include <list>
 #include <random>
 #include <sstream>
+#include <stdexcept>
 #include <string>
 #include <type_traits>
 #include <utility>

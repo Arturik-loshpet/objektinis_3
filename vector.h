@@ -1,4 +1,8 @@
+#ifndef MY_VECTOR_H
+#define MY_VECTOR_H
+
 #include "library.h"
+#include <stdexcept>
 
 template <typename T>
 class MyVector{
@@ -293,3 +297,5 @@ void pildymas(Container& vec, int sk){
     const std::chrono::duration<double, std::milli> trukme = pabaiga - pradzia;
     std::cout << trukme.count() << std::endl;
 }
+
+#endif
