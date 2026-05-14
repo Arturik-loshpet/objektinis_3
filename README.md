@@ -1,8 +1,9 @@
 Kaip naudotis programa:
 
-1. make clean - išvalyti kompiliacijos failus.
-2. make - komanda sukuria failą "programa" pagal makefile.
-3. ./programa - komanda paleidžia pačią programą.
+1. Atsidaryti "installer" folder
+2. Paleisti Setup.exe ir spausti "install" mygtuką wizarde
+3. Wizarde uždėti varnelę ant "Paleisti Artur-Vascuk".
+4. Norėdami paleisti programą nenaudodami instaliavimo Wizard, galite į Start menių parašyti "Artur-Vascuk" arba "C:\Program Files (x86)\VU\Artur-Vascuk" kelyje paleisti "programa.exe"
 
 Papildoma: Norint atlikti programos testavimą konsolėje reikia įrašyti komandą - make test.
 
