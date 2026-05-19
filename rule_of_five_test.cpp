@@ -502,6 +502,7 @@ void test_student_stream_input() {
     assert(studentas.pazymiai()[2] == 7);
 }
 
+
 #define RUN_TEST(test_name)        \
     do {                           \
         test_name();               \

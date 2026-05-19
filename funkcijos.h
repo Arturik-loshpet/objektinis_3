@@ -490,6 +490,7 @@ void isvestis_failas(StudentContainer& stud) {
                  << std::setw(15) << studentas.pavarde() << std::setw(9) << std::setprecision(2)
                  << studentas.vidurkis() << std::setw(9) << studentas.mediana() << std::endl;
         }
+
         return;
     }
 }

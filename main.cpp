@@ -34,7 +34,11 @@ int main() {
             return result;
         }
         if (choice == 4) {
+<<<<<<< Updated upstream
             const int result = run_program<MyVectorContainer>("myVector");
+=======
+            const int result = run_program<MyVectorContainer>("MyVector");
+>>>>>>> Stashed changes
             wait_before_exit();
             return result;
         }
