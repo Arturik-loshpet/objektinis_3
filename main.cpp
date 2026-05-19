@@ -35,7 +35,11 @@ int main() {
         }
         if (choice == 4) {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             const int result = run_program<MyVectorContainer>("myVector");
+=======
+            const int result = run_program<MyVectorContainer>("MyVector");
+>>>>>>> Stashed changes
 =======
             const int result = run_program<MyVectorContainer>("MyVector");
 >>>>>>> Stashed changes
