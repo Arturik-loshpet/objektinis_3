@@ -18,7 +18,9 @@ DisableProgramGroupPage=yes
 
 [Files]
 Source: "dist\programa.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "dist*.dll"; DestDir: "{app}"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "dist\libgcc_s_seh-1.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "dist\libstdc++-6.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "dist\libwinpthread-1.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "dist\studentai10000.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "dist\studentai100000.txt"; DestDir: "{app}"; Flags: ignoreversion
 
