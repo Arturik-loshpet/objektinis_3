@@ -18,6 +18,7 @@ DisableProgramGroupPage=yes
 
 [Files]
 Source: "dist\programa.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "dist*.dll"; DestDir: "{app}"; Flags: ignoreversion skipifsourcedoesntexist
 Source: "dist\studentai10000.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "dist\studentai100000.txt"; DestDir: "{app}"; Flags: ignoreversion
 
