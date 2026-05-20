@@ -4,11 +4,11 @@
 
 [Setup]
 AppId={{A4E7C0A6-1F15-4F46-8E62-36A6247B77E4}
-AppName=Studentu_Ivedimas_AV
+AppName=Artur-Vascuk
 AppVersion=1.0
 AppPublisher=VU
-DefaultDirName={pf}\VU\Studentu_Ivedimas_AV
-DefaultGroupName=VU\Studentu_Ivedimas_AV
+DefaultDirName={pf}\VU\Artur-Vascuk
+DefaultGroupName=VU\Artur-Vascuk
 OutputDir=installer
 OutputBaseFilename=Setup
 Compression=lzma
@@ -25,11 +25,11 @@ Source: "dist\studentai10000.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "dist\studentai100000.txt"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
-Name: "{group}\Studentu_Ivedimas_AV"; Filename: "{app}\programa.exe"; WorkingDir: "{app}"
-Name: "{userdesktop}\Studentu_Ivedimas_AV"; Filename: "{app}\programa.exe"; WorkingDir: "{app}"
+Name: "{group}\Artur-Vascuk"; Filename: "{app}\programa.exe"; WorkingDir: "{app}"
+Name: "{userdesktop}\Artur-Vascuk"; Filename: "{app}\programa.exe"; WorkingDir: "{app}"
 
 [Registry]
 Root: HKLM; Subkey: "Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers"; ValueType: string; ValueName: "{app}\programa.exe"; ValueData: "RUNASADMIN"; Flags: uninsdeletevalue
 
 [Run]
-Filename: "{app}\programa.exe"; Description: "Paleisti Studentu_Ivedimas_AV"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\programa.exe"; Description: "Paleisti Artur-Vascuk"; Flags: nowait postinstall skipifsilent
